@@ -39,6 +39,6 @@ const user = new User({
         }
     ]
 
-});//.save();
+}).save();
 
 module.exports = User;
