@@ -2,19 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     title: String,
-    recipes: [{
-        name: String,
-        ingredients: [{
-            name: String,
-            weight: Number,
-            price: String
-        }]
-    }]
-
-  
-
+    imagePath: String
+    // recipes: [{ type: Schema.Types.ObjectId, ref: 'recipe' }]
 }, {
     timestamps: true
 });
@@ -22,23 +16,9 @@ const UserSchema = new Schema({
 
 const User = mongoose.model('user', UserSchema);
 
-// Add a 'dummy' user (every time you require this file!)
+/*// Add a 'dummy' user (every time you require this file!)
 const user = new User({
     name: 'Joe',
-    title: 'Mr.',
-    recipes: [
-        {name: 'pasta bolognaise', ingredients: [
-        {name: 'Tomaten', weight: 200, price:'1,20'}   ]
-        },
-        {
-            name: 'spaghetti carbonara',
-            ingredients:[]
-        },
-        {
-            name: 'pizza'
-        }
-    ]
-
-}).save();
+}).save();*/
 
 module.exports = User;

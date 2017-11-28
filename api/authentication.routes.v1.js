@@ -17,7 +17,7 @@ var auth = require('../auth/authentication');
 router.post('/login', function(req, res) {
 
     // Even kijken wat de inhoud is
-    // console.dir(req.body);
+
 
     // De username en pwd worden meegestuurd in de request body
     var username = req.body.username;
